@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Gillroy", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(155, 184, 155);
+}
+
+#panel {
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffffff, #e0f0e0);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.ptop {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 0 30%;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(105, 146, 105);
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.elem h2 {
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.box {
+    color: rgb(62, 197, 170);
+    font-weight: 600;
+    font-size: 22px;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.pbtm {
+    width: 100%;
+    height: calc(100% - 100px);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-start;
+}
+
+.bubble {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgb(102, 173, 102), rgb(72, 104, 72));
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.3s;
+    animation: popIn 0.5s ease forwards;
+}
+
+.bubble:hover {
+    cursor: pointer;
+    background: radial-gradient(circle, rgb(135, 195, 135), rgb(105, 146, 105));
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.bubble.correct {
+    animation: correctHit 0.3s forwards;
+}
+
+@keyframes correctHit {
+    0% {
+        transform: scale(1);
+        background-color: rgb(135, 230, 135);
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.bubble.wrong {
+    animation: wrongHit 0.3s forwards;
+}
+
+@keyframes wrongHit {
+    0% {
+        transform: scale(1);
+        background-color: rgb(255, 99, 99);
+    }
+    100% {
+        transform: scale(0.9);
+        background-color: rgb(72, 104, 72);
+    }
+}
+
+.button {
+    padding: 20px 40px;
+    font-size: 22px;
+    background-color: rgb(72, 104, 72);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 10px;
+    margin: 20px;
+    border: none;
+    transition: all 0.4s ease-in-out;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(105, 146, 105);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
